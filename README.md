@@ -22,7 +22,7 @@ Make note of Consumer Key and Consumer Secret
 
 ## Set Configuraion
 
-Open ```config.py``` and replace consumer_key and consumer_secret by the values you got after registering your application.
+Open ```config.py``` and replace CONSUMER_KEY and CONSUMER_SECRET by the values you got after registering your application.
 
 ## Run the application
 

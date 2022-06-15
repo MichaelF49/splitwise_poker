@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "main/base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
 <div class="jumbotron">
     <h2>Dashboard</h2>
 </div>
-<div class="buttonCont" style="text-align:center;margin-top:10%">
+<div class="buttonCont" style="text-align:center;margin-top:10">
     <a href="/new_group" class="btn btn-primary" type="submit">Create New Group</a>
 </div>
 
@@ -14,7 +14,7 @@
         <ul>
             {% for group in groups %}
             <!-- link to groups -->
-            <li><a href="{{url_for('group', group_id=group.getId())}}">{{group.getName()}}</a></li>
+            <li><a href="{{url_for('main.group', group_id=group.getId())}}">{{group.getName()}}</a></li>
             {% endfor %}
         </ul>
     </div>
