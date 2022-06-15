@@ -31,6 +31,12 @@ Goto the cloned repository and type
 flask run
 ```
 
+Use this command for opening the app in debug mode (recommended during development):
+
+```python
+python app.py
+```
+
 Goto http://localhost:5000/ on your browser.
 
 ## Contact
