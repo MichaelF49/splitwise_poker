@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Friends{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <!-- Link back to dashboard -->
+  <a href="/dashboard" class="btn btn-primary" type="submit">Back to Dashboard</a>
+  <h2>Group: {{Name}}</h2>
+</div>
+<!-- Names of members of this group -->
+<div class="row">
+  <div class="col-md-6">
+    <h3>Members</h3>
+    <ul>
+      {% for member in Members %}
+      <li>{{member.getFirstName()}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="friendCont">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Balances</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for debt in Debts %}
+            <tr>
+              <td>{{debt[0]}}</td>
+              <td>{{debt[1]}}</td>
+              <td>
+                {{debt[2]}}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
