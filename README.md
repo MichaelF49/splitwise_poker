@@ -3,14 +3,13 @@ An example Flask application to show the usage of Splitwise SDK
 
 ## Installation
 
-This application is dependent on [Flask](http://flask.pocoo.org/) and [Splitwise](https://github.com/namaggarwal/splitwise) python packages. Install these python packages using the commands below:
+Install requirements:
 
 ```sh
-pip install Flask
-pip install splitwise
+pip install -r requirements.txt
 ```
 
-## Register your application
+## Register your application [already done]
 
 Goto [Splitwise](https://secure.splitwise.com/oauth_clients) and register you application. Use the following -
 
@@ -29,7 +28,7 @@ Open ```config.py``` and replace CONSUMER_KEY and CONSUMER_SECRET by the values 
 Goto the cloned repository and type 
 
 ```python
-python app.py
+flask run
 ```
 
 Goto http://localhost:5000/ on your browser.
