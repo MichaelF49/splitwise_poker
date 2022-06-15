@@ -2,9 +2,11 @@
 {% block title %}{{Name}}{% endblock %}
 {% block content %}
 <div class="jumbotron">
+  <h2>Group: {{Name}}</h2>
   <!-- Link back to dashboard -->
   <a href="/dashboard" class="btn btn-primary" type="submit">Back to Dashboard</a>
-  <h2>Group: {{Name}}</h2>
+  <!-- Link to delete a group -->
+  <a href="{{url_for('main.delete_group', group_id=ID)}}" class="btn btn-danger" type="submit">Delete Group</a>
 </div>
 <!-- Names of members of this group -->
 <div class="row">
@@ -16,31 +18,30 @@
       {% endfor %}
     </ul>
   </div>
-  <div class="friendCont">
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>From</th>
-              <th>To</th>
-              <th>Balances</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for debt in Debts %}
-            <tr>
-              <td>{{debt[0]}}</td>
-              <td>{{debt[1]}}</td>
-              <td>
-                {{debt[2]}}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Balances</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for debt in Debts %}
+        <tr>
+          <td>{{debt[0]}}</td>
+          <td>{{debt[1]}}</td>
+          <td>
+            {{debt[2]}}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
+</div>
 
-  {% endblock %}
+{% endblock %}

@@ -1,7 +1,6 @@
-from flask import Flask, render_template, redirect, session, url_for, request
+from flask import render_template, redirect, session, url_for, flash
 from flask.blueprints import Blueprint
 
-from splitwise import Splitwise
 from splitwise.group import Group
 from splitwise.user import User
 from splitwise.expense import Expense
@@ -86,3 +85,16 @@ def group(group_id):
     ), 'Members': group.getMembers(), 'Debts': final_debts}
 
     return render_template("main/group.html", **group_info)
+
+
+@main.route("/group/<group_id>/delete")
+def delete_group(group_id):
+    if 'access_token' not in session:
+        return redirect(url_for("main.home"))
+
+    sObj = init_obj()
+
+    sObj.deleteGroup(group_id)
+    flash("Group deleted successfully", 'success')
+
+    return redirect(url_for("main.dashboard"))
