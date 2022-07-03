@@ -7,6 +7,7 @@
   <a href="/dashboard" class="btn btn-primary" type="submit">Back to Dashboard</a>
   <!-- Link to delete a group -->
   <a href="{{url_for('main.delete_group', group_id=ID)}}" class="btn btn-danger" type="submit">Delete Group</a>
+  <a href="{{url_for('main.create_expense', group_id=ID)}}" class="btn btn-info" type="submit">Create Expense</a>
 </div>
 <!-- Names of members of this group -->
 <div class="row">
